@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 
-class CreateTableButton extends StatelessWidget {
+class CustomAppBtn extends StatelessWidget {
+  final String label;
   final void Function()? onPressed;
-  const CreateTableButton({super.key, this.onPressed});
+  const CustomAppBtn({super.key, required this.label, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;
     return ClipRRect(
-      borderRadius: BorderRadiusGeometry.circular(16),
+      borderRadius: BorderRadiusGeometry.circular(10),
       child: Material(
-        color: color.primary,
+        type: MaterialType.button,
+        textStyle: TextStyle(color: color.inversePrimary),
+        color: onPressed != null ? color.primary : color.primaryContainer,
         child: InkWell(
           onTap: onPressed,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text('Hola button', style: TextStyle(color: color.surface)),
+            child: Center(child: Text(label)),
           ),
         ),
       ),
