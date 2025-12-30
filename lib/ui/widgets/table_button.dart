@@ -9,11 +9,13 @@ class CustomAppBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;
     return ClipRRect(
-      borderRadius: BorderRadiusGeometry.circular(10),
+      borderRadius: BorderRadiusGeometry.circular(20),
       child: Material(
         type: MaterialType.button,
+        elevation: 2,
+        shadowColor: color.shadow,
         textStyle: TextStyle(color: color.inversePrimary),
-        color: onPressed != null ? color.primary : color.primaryContainer,
+        color: onPressed != null ? color.primary : color.outline,
         child: InkWell(
           onTap: onPressed,
           child: Padding(

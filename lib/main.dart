@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Dominote Flutter',
       debugShowCheckedModeBanner: false,
-      theme: ThemeApp().getTheme('default'),
+      theme: ThemeApp().getTheme('dark'),
       home: const MainScreen(),
     );
   }
