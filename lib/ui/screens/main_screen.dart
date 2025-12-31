@@ -1,5 +1,4 @@
 import 'package:dominote_flutter/ui/widgets/panels/main_panel.dart';
-import 'package:dominote_flutter/ui/widgets/table_button.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -8,7 +7,6 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;
-    final media = MediaQuery.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(

@@ -1,4 +1,4 @@
-import 'package:dominote_flutter/ui/screens/main_screen.dart';
+import 'package:dominote_flutter/ui/router/router.dart';
 import 'package:dominote_flutter/ui/theme/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Dominote Flutter',
       debugShowCheckedModeBanner: false,
       theme: ThemeApp().getTheme('dark'),
-      home: const MainScreen(),
+      routerConfig: router,
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:dominote_flutter/ui/widgets/table_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MainPanel extends StatelessWidget {
   const MainPanel({super.key});
@@ -19,7 +20,7 @@ class MainPanel extends StatelessWidget {
       // color: Theme.of(context).colorScheme.primaryContainer,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Theme.of(context).colorScheme.secondaryContainer,
+        color: Theme.of(context).colorScheme.surfaceContainer,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -27,7 +28,10 @@ class MainPanel extends StatelessWidget {
         children: [
           SizedBox(
             width: containerWidth * 0.9,
-            child: CustomAppBtn(label: 'Create Table', onPressed: () => {}),
+            child: CustomAppBtn(
+              label: 'Create Table',
+              onPressed: () => context.push('/create/table'),
+            ),
           ),
           SizedBox(
             width: containerWidth * 0.9,
