@@ -1,17 +1,13 @@
 class Table {
-  final int id;
   final String name;
-  final List<String> players;
-  final int wins;
 
-  Table({
-    required this.id,
-    required this.name,
-    required this.players,
-    this.wins = 0,
-  }) : assert(players.length >= 4, 'At least 4 players are required');
+  Table({required this.name});
 
-  Map<String, Object> toMap() {
-    return {'id': id, 'name': name, 'players': players.join(',')};
+  Map<String, dynamic> toMap() {
+    return {'name': name};
+  }
+
+  factory Table.fromMap(Map<String, dynamic> map) {
+    return Table(name: map['name'] as String);
   }
 }
